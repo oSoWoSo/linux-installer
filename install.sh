@@ -211,7 +211,7 @@ check_error ()
 
 pre_checks
 
-[ -z "$1" ] && wget -O prompts.sh https://raw.github.com/EmperorPenguin18/linux-installer/main/prompts.sh || wget -O prompts.sh "$1"
+[ -z "$1" ] && wget -O prompts.sh https://raw.github.com/oSoWoSo/linux-installer/zen0bit-testing/prompts.sh || wget -O prompts.sh "$1"
 source ./prompts.sh
 user_prompts
 
@@ -236,7 +236,7 @@ echo "-------------------------------------------------"
 echo "                Installing distro                "
 echo "-------------------------------------------------"
 
-wget -O $(echo $DISTRO).sh https://raw.github.com/EmperorPenguin18/linux-installer/main/distros/$(echo $DISTRO).sh
+wget -O $(echo $DISTRO).sh https://raw.github.com/oSoWoSo/linux-installer/zen0bit-testing/distros/$(echo $DISTRO).sh
 source ./$(echo $DISTRO).sh
 print_logo
 check_error "Print logo failed"
