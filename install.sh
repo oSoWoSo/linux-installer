@@ -179,7 +179,7 @@ generate_fstab ()
 
 install_distro ()
 {
-   curl -sL https://raw.github.com/EmperorPenguin18/linux-installer/main/$(echo $DISTRO).sh | sh -s $BOOTTYPE $PASS $USER $DISKNAME $(echo $DISKNAME2)2 || \
+   curl -sL https://raw.github.com/oSoWoSo/linux-installer/zen0bit-patch-1/$(echo $DISTRO).sh | sh -s $BOOTTYPE $PASS $USER $DISKNAME $(echo $DISKNAME2)2 || \
    return 1
 }
 
