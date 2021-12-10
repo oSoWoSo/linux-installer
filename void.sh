@@ -59,17 +59,17 @@ fi
 #Install the base system
 cp /mnt/etc/fstab fstab.bak
 check_error
-wget https://alpha.us.repo.voidlinux.org/live/current/$(curl -s https://alpha.us.repo.voidlinux.org/live/current/ | grep void-x86_64-ROOTFS | cut -d '"' -f 2)
+wget https://mirror.fit.cvut.cz/voidlinux/live/current/$(curl -s https://mirror.fit.cvut.cz/voidlinux/live/current/ | grep void-x86_64-ROOTFS | cut -d '"' -f 2)
 check_error
 tar xvf void-x86_64-ROOTFS-*.tar.xz -C /mnt
 check_error
 mv fstab.bak /mnt/etc/fstab
 check_error
-echo "repository=https://alpha.us.repo.voidlinux.org/current" > /mnt/etc/xbps.d/xbps.conf
+echo "repository=https://mirror.fit.cvut.cz/voidlinux/current" > /mnt/etc/xbps.d/xbps.conf
 check_error
-echo "repository=https://alpha.us.repo.voidlinux.org/current/nonfree" >> /mnt/etc/xbps.d/xbps.conf
-echo "repository=https://alpha.us.repo.voidlinux.org/current/multilib" >> /mnt/etc/xbps.d/xbps.conf
-echo "repository=https://alpha.us.repo.voidlinux.org/current/multilib/nonfree" >> /mnt/etc/xbps.d/xbps.conf
+echo "repository=https://mirror.fit.cvut.cz/voidlinux/current/nonfree" >> /mnt/etc/xbps.d/xbps.conf
+echo "repository=https://mirror.fit.cvut.cz/voidlinux/current/multilib" >> /mnt/etc/xbps.d/xbps.conf
+echo "repository=https://mirror.fit.cvut.cz/voidlinux/current/multilib/nonfree" >> /mnt/etc/xbps.d/xbps.conf
 echo "ignorepkg=sudo" >> /mnt/etc/xbps.d/xbps.conf
 echo "ignorepkg=dracut" >> /mnt/etc/xbps.d/xbps.conf
 arch-chroot /mnt dhcpcd
